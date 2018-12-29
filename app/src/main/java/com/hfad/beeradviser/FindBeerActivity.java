@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class FindBeerActivity extends Activity {
-    private BeerExpert expert = new BeerExpert();
+    private BeerExpert expert = new BeerExpert(); //переменная типа BeerExpert()
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +20,9 @@ public class FindBeerActivity extends Activity {
 
         TextView brands = (TextView)findViewById(R.id.brands);
         Spinner color = (Spinner) findViewById(R.id.color);
-        String beerType = String.valueOf(color.getSelectedItem());
-        List<String> brandsList = expert.getBrands(beerType);
-        StringBuilder brandsFormatted = new StringBuilder();
+        String beerType = String.valueOf(color.getSelectedItem()); //получение значения из списка
+        List<String> brandsList = expert.getBrands(beerType); //передается выбранное значение из списка в метод объекта класса BeerExpert
+        StringBuffer brandsFormatted = new StringBuffer();
         for (String brand : brandsList) {
             brandsFormatted.append(brand).append('\n');
         }
